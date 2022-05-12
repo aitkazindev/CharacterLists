@@ -8,7 +8,9 @@
 import UIKit
 
 class TableViewController: UITableViewController {
-
+    
+    let arrayNames = ["name1","name2","name3","name4"]
+    let arrayLastNames = ["lastname1","lastname2","lastname3","lastname4"]
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -28,18 +30,18 @@ class TableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return arrayNames.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
 
-        // Configure the cell...
-
+        let labelName = cell.viewWithTag(1000) as! UILabel
+        labelName.text = arrayNames[indexPath.row]
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.

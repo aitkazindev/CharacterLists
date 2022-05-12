@@ -53,7 +53,15 @@ class TableViewController: UITableViewController {
         return 75.0
     }
     
-
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let detailVC = (storyboard?.instantiateViewController(withIdentifier: "DetailVC"))! as! ViewController
+        detailVC.name = arrayNames[indexPath.row]
+        detailVC.lastName = arrayLastNames[indexPath.row]
+        detailVC.image = arrayImages[indexPath.row]
+        
+        self.navigationController?.pushViewController(detailVC, animated: true)
+        
+    }
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

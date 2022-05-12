@@ -9,8 +9,9 @@ import UIKit
 
 class TableViewController: UITableViewController {
     
-    let arrayNames = ["name1","name2","name3","name4"]
-    let arrayLastNames = ["lastname1","lastname2","lastname3","lastname4"]
+    let arrayNames = ["Hinata","Tobio","Nishinoya","Kei"]
+    let arrayLastNames = ["Shouyou","Kageyama","Yuu","Tsukishima"]
+    let arrayImages = ["image1","image2","image3","image4"]
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -39,7 +40,17 @@ class TableViewController: UITableViewController {
 
         let labelName = cell.viewWithTag(1000) as! UILabel
         labelName.text = arrayNames[indexPath.row]
+        
+        let labelLastNames = cell.viewWithTag(1001) as! UILabel
+        labelLastNames.text = arrayLastNames[indexPath.row]
+        
+        let imageview = cell.viewWithTag(1002) as! UIImageView
+        imageview.image = UIImage(named:arrayImages[indexPath.row])
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 75.0
     }
     
 

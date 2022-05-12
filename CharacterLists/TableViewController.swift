@@ -9,9 +9,10 @@ import UIKit
 
 class TableViewController: UITableViewController {
     
-    let arrayNames = ["Hinata","Tobio","Nishinoya","Kei"]
-    let arrayLastNames = ["Shouyou","Kageyama","Yuu","Tsukishima"]
-    let arrayImages = ["image1","image2","image3","image4"]
+    
+    var arrayNames = ["Hinata","Tobio","Nishinoya","Kei"]
+    var arrayLastNames = ["Shouyou","Kageyama","Yuu","Tsukishima"]
+    var arrayImages = ["image1","image2","image3","image4"]
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -23,7 +24,12 @@ class TableViewController: UITableViewController {
     }
 
     // MARK: - Table view data source
-
+    @IBAction func addNewPerson(_ sender: Any) {
+        arrayNames.append("User5")
+        arrayLastNames.append("LastName5")
+        arrayImages.append("image1")
+        tableView.reloadData()
+    }
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1

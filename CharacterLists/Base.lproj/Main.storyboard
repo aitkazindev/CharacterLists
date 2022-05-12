@@ -93,7 +93,13 @@
                             <outlet property="delegate" destination="Y0U-gc-GFI" id="gpt-7o-EHZ"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="VIn-ER-IdE"/>
+                    <navigationItem key="navigationItem" id="VIn-ER-IdE">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="person.badge.plus" catalog="system" id="F5B-C7-3R6">
+                            <connections>
+                                <action selector="addNewPerson:" destination="Y0U-gc-GFI" id="Nzz-VX-hqn"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gyK-Ec-aqc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -119,6 +125,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="person.badge.plus" catalog="system" width="128" height="124"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
